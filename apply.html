@@ -1,0 +1,28 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>出生データ受付｜雷電庵</title><style>body{font-family:"Hiragino Sans","Noto Sans JP",sans-serif;max-width:640px;margin:0 auto;padding:24px 16px;color:#111;line-height:1.7}h1{font-size:1.4rem;border-bottom:2px solid #111;padding-bottom:6px}label{display:block;margin-top:16px;font-weight:600}input,textarea{width:100%;padding:10px;font-size:1rem;border:1px solid #888;box-sizing:border-box}.note{font-size:.85rem;color:#555}button{margin-top:24px;width:100%;padding:14px;font-size:1.05rem;background:#111;color:#fff;border:0}table{border-collapse:collapse;width:100%}th,td{border:1px solid #999;padding:8px;vertical-align:top;text-align:left}th{width:32%;background:#f3f3f3}footer{margin-top:32px;font-size:.8rem;color:#666}</style></head><body>
+<h1>雷電庵｜出生データ受付</h1>
+<p>お支払いありがとうございます。鑑定に必要な情報を入力してください。受付後、<strong>24〜48時間以内</strong>に納品先Gmailへお届けします。</p>
+<form action="https://formsubmit.co/seishinkai-houkoku+raiden-an@mail.grokbot.com" method="POST">
+<input type="hidden" name="_subject" value="【雷電庵】出生データ受付">
+<input type="hidden" name="_cc" value="rydeen@psr-seishinkai.org">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="true">
+<input type="hidden" name="_next" id="next" value="">
+<input type="text" name="_honey" style="display:none">
+<label>呼び名 *<input name="呼び名" required maxlength="40"></label>
+<label>生年月日 *<input type="date" name="生年月日" required min="1900-01-01"></label>
+<label>出生時刻<input type="time" name="出生時刻" id="t"></label>
+<label style="font-weight:400"><input type="checkbox" name="出生時刻不明" value="不明" id="unk" style="width:auto"> 出生時刻が分からない</label>
+<p class="note">時刻が分からない場合、ハウス・アセンダントを使わない方法で鑑定します。精度は下がります。</p>
+<label>出生地（都道府県・市区町村）*<input name="出生地" required placeholder="例：三重県四日市市"></label>
+<label>納品先Gmail *<input type="email" name="email" required pattern=".+@gmail\.com$" placeholder="example@gmail.com"></label>
+<label>相談テーマ（任意）<textarea name="相談テーマ" rows="4" placeholder="例：来年の転職時期、事業の繁忙期の見通し"></textarea></label>
+<label>Square注文番号・お支払い時のお名前（任意）<input name="支払い照合"></label>
+<label style="font-weight:400"><input type="checkbox" name="同意" value="同意する" required style="width:auto"> <a href="tokushoho.html" target="_blank">特定商取引法に基づく表記</a>と、下記の個人情報の取扱いに同意します *</label>
+<p class="note">個人情報の取扱い：入力された情報は本鑑定の作成・納品・お問い合わせ対応にのみ使用し、法令に基づく場合を除き第三者に提供しません。納品後1年で削除します。</p>
+<button type="submit">送信する</button>
+</form>
+<footer>雷電庵（次世代労働研究所 RYDEEN）｜お問い合わせ rydeen@psr-seishinkai.org</footer>
+<script>
+document.getElementById('next').value=new URL('thanks.html',location.href).href;
+var u=document.getElementById('unk'),t=document.getElementById('t');u.onchange=function(){t.disabled=u.checked;if(u.checked)t.value=''};
+</script></body></html>
